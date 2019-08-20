@@ -42,13 +42,6 @@ class Projects extends React.Component {
     }
   }
 
-  componentDidMount(){
-    console.log('hello from the project page!')
-  }
-
-  componentWillUnmount(){
-    console.log('goodbye from the project page!')
-  }
 
   render(){
   return (
