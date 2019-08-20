@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1442bce5.chunk.css",
-    "main.js": "/portfolio/static/js/main.d17c61ff.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.d17c61ff.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.d31a9c89.chunk.css",
+    "main.js": "/portfolio/static/js/main.82cd8b8d.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.82cd8b8d.chunk.js.map",
     "runtime~main.js": "/portfolio/static/js/runtime~main.f308c8e6.js",
     "runtime~main.js.map": "/portfolio/static/js/runtime~main.f308c8e6.js.map",
     "static/js/2.261595cc.chunk.js": "/portfolio/static/js/2.261595cc.chunk.js",
     "static/js/2.261595cc.chunk.js.map": "/portfolio/static/js/2.261595cc.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.0b2b898813cfd44399e573c471d26c44.js": "/portfolio/precache-manifest.0b2b898813cfd44399e573c471d26c44.js",
+    "precache-manifest.8bff333057918335801719eb890c60a7.js": "/portfolio/precache-manifest.8bff333057918335801719eb890c60a7.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.1442bce5.chunk.css.map": "/portfolio/static/css/main.1442bce5.chunk.css.map",
+    "static/css/main.d31a9c89.chunk.css.map": "/portfolio/static/css/main.d31a9c89.chunk.css.map",
     "static/media/census-searcher-tool.PNG": "/portfolio/static/media/census-searcher-tool.f1de9dac.PNG",
     "static/media/ski-resort-explorer.PNG": "/portfolio/static/media/ski-resort-explorer.f74737a0.PNG",
     "static/media/trump-twitter-map.PNG": "/portfolio/static/media/trump-twitter-map.fd76018e.PNG"
