@@ -60,8 +60,8 @@ function App() {
     className="route-wrapper"
   >
       <Route path="/portfolio" exact component={Home} />
-      <Route path="/resume" component={Resume}/>
-      <Route path="/projects" component={Projects}/>
+      <Route path="/portfolio/resume" component={Resume}/>
+      <Route path="/portfolio/projects" component={Projects}/>
       </AnimatedSwitch>
     </div>
     </Router>
