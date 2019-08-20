@@ -76,7 +76,7 @@ nav{
 /* 2.1 Link Styles */
 .link{
   position: relative;
-  font-size: 16px;
+  font-size: 1.4em;
   &:hover{
     font-weight: bold;
     transition: all 0.3s ease-in-out 0s;
@@ -154,19 +154,21 @@ right: 0;
   }
   width: 40%;
   align-self: center;
+  min-width: 300px;
 }
 
 #about-me{
   width: 40%;
+  min-width: 300px;
+
 }
 
 .about-container{
   position: relative;
   background-color: white;
-  width: 100vw;
   left: 0;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
   padding: 25px;
 }
@@ -296,7 +298,21 @@ a > .project-card-header{
   }
 }
 
+@media (max-width: 600px) {
+  .about-bullet{
+    flex-direction: column;
+    min-width: none;
+    text-align: center;
+  }
+}
+
 @media (max-width: 900px) {
+  #greeting{
+    width: 80%;
+  }
+  #about-me{
+  width: 80%;
+  }
   .project-card{
     width: 900px;
   }
