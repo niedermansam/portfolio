@@ -24,7 +24,7 @@ function App() {
   // wrap the `spring` helper to use a bouncy config
   function bounce(val) {
     return spring(val, {
-      stiffness: 20,
+      stiffness: 150,
       damping: 22,
     });
   }
