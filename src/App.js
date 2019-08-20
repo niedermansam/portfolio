@@ -59,7 +59,7 @@ function App() {
     mapStyles={mapStyles}
     className="route-wrapper"
   >
-      <Route path="/" exact component={Home} />
+      <Route path="/portfolio" exact component={Home} />
       <Route path="/resume" component={Resume}/>
       <Route path="/projects" component={Projects}/>
       </AnimatedSwitch>
