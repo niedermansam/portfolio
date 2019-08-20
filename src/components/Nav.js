@@ -5,7 +5,7 @@ function Nav() {
   const style = {color: "white", textDecoration: 'none'}
   return (
     <nav>
-      <h1>Logo</h1>
+      <h1>Hi</h1>
       <ul className="nav-links">
         <Link style={style} to="/">
           <li className="link">About</li>
