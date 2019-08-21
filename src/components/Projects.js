@@ -45,19 +45,28 @@ class Projects extends React.Component {
     }
   }
 
+  createProjectComponentArray(arr){
+
+    let projectComponents = [];
+
+      for(let i=0; i<arr.length; i++){
+        arr[i].key=i;
+        if(i<this.state.number) projectComponents.push(ProjectCard(arr[i]))
+      }
+    return projectComponents;
+  }
+
 
   render(){
+
+  let projectComponents = this.createProjectComponentArray(projectArr)
+  
   return (
     <div className="text-container project-page">
       <h1>{this.state.title}</h1>
       <div className="projects">
         {
-          projectArr.map( (project, index) => {
-            project.key = index;
-            if(index < this.state.number){
-              return new ProjectCard(project);
-            }
-          })
+          projectComponents
         }
       </div>
     </div>

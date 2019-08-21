@@ -42,7 +42,7 @@ $overlay: rgba(0,0,0,0.7);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  margin-bottom: 5em;
   height: 100%;
 }
 
@@ -86,7 +86,7 @@ nav{
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: .1em;
     bottom: 0;
     left: 0;
     background-color: white;
@@ -103,7 +103,7 @@ nav{
 
 .active .link {
   font-weight: bolder;
-  border-bottom: 3px solid  white;
+  border-bottom: .1em solid  white;
 }
 
 .link:hover:before {
@@ -142,7 +142,6 @@ right: 0;
   align-items: center;
   color: $grey;
   i{
-    margin-right: 10px;
     color: $main-color;
   }
 }
@@ -271,8 +270,6 @@ a > .project-card-header{
   }
 }
 
-
-
 .project-skills {
   text-align: left;
   margin: 0;
@@ -284,6 +281,24 @@ a > .project-card-header{
   h3{
     margin: 0;
   }
+}
+
+/* 3.3 Resume */
+
+.skill-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skill{
+  padding: 5px;
+  margin: 1px;
+  width: 45%;
+  background-color: $main-color;
+  color: white;
 }
 
 /* 4 Responsive Styles */
@@ -318,6 +333,9 @@ a > .project-card-header{
     flex-direction: column;
     min-width: none;
     text-align: center;
+  }
+  .link{
+    font-size: 1em;
   }
 }
 
