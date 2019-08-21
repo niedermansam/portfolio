@@ -81,11 +81,11 @@ return (
 
     <div id="about-me">
       <div className="about-bullet"> <i className="fa fa-graduation-cap fa-3x"></i> <p> I recently graduated from the University of Montana with a Master's degree in Economics. </p></div>
-      <div className="about-bullet"><i className="fa fa-code fa-3x"></i> <p> I have experience with HTML, CSS, and Javascript, along with React, and node.js. </p></div>
+      <div className="about-bullet"><i className="fa fa-code fa-3x"></i> <p> I have experience with HTML, CSS, and Javascript, along with React, node.js, MySQL, and MongoDB. </p></div>
       <div className="about-bullet"> <i className="fa fa-bar-chart fa-3x"></i> <p> I use R/Shiny and Stata for more complex data visualitzation, analysis, and econometric modeling.</p></div>
     </div>
     </div>
-    <Projects number='2' />
+    <Projects title="A Sample of My Work" number='2' />
 
   </div>
 )

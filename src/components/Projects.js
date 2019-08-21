@@ -7,7 +7,7 @@ const projectArr = [
     the NOAA API to get a forecast for that point.`,
     url: "www.averageanalytics.com/snow-forecast",
     github: 'https://github.com/niedermansam/snow-forecast',
-    keywords: [ "Javascript", "HTML", "CSS", "NOAA API", "Web Scraping", "leaflet.js"],
+    keywords: [ "Javascript", "HTML/CSS", "leaflet.js", "Web Scraping", "NOAA API"],
     img: require('./photos/ski-resort-explorer.PNG')
   },
   {name: "Census Time Series", description: `A Javascript application
@@ -15,7 +15,7 @@ const projectArr = [
      2010 to present.`,
     url: 'www.averageanalytics.com/census-search/',
     github: 'https://github.com/niedermansam/census-search',
-    keywords: ["Javascript", "HTML", "CSS", "JQuery", "Census API", "Plot.ly", "Data Visualization"],
+    keywords: ["Javascript", "HTML/CSS", "Plot.ly", "JQuery", "Census API"],
     img: require('./photos/census-searcher-tool.PNG')
   },
   {name: "Trump Twittermap", description: `An R/Shiny application
@@ -31,14 +31,17 @@ const projectArr = [
 class Projects extends React.Component {
   constructor(props){
     super(props);
-    let number=props.number;
+    let number = props.number,
+        title = props.title;
 
     if(!number) number=projectArr.length;
     if(number==="all") number=projectArr.length;
 
+    if(!title) title = "Projects"
+
     this.state = {
       number: number,
-
+      title: title
     }
   }
 
@@ -46,7 +49,7 @@ class Projects extends React.Component {
   render(){
   return (
     <div className="text-container project-page">
-      <h1>Projects</h1>
+      <h1>{this.state.title}</h1>
       <div className="projects">
         {
           projectArr.map( (project, index) => {

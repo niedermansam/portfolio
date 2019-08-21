@@ -32,6 +32,7 @@ $color-dark: #051C33;
 $color-yellow: #E2964A;
 $color-green: #60A595;
 $main-color: #2D4671;
+$grey: #5D5D5D;
 $secondary-color: #607EB2;
 $secondary-color-light: rgba(96,126,178,.6);
 $overlay: rgba(0,0,0,0.7);
@@ -135,13 +136,14 @@ right: 0;
 
 .about-bullet{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 20px;
-  text-align: left;
+  text-align: center;
   align-items: center;
-
+  color: $grey;
   i{
     margin-right: 10px;
+    color: $main-color;
   }
 }
 
@@ -151,10 +153,15 @@ right: 0;
     font-size: 5em;
     margin-top: 0;
     margin-bottom: 20px;
+    color: $main-color;
   }
+  color: $grey;
   width: 40%;
   align-self: center;
   min-width: 300px;
+  p{
+    font-size: 1.3em;
+  }
 }
 
 #about-me{
@@ -246,10 +253,11 @@ a > .project-card-header{
   background-color: white;
   z-index: 1;
   box-shadow: -5px 0px 15px rgba(0,0,0,.5);
-  background-color: $secondary-color-light;
+  background-color: white;
+  padding: 5px;
   button{
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 15px;
     margin: 10px;
     border-radius: 10px;
     border-color: black;
@@ -270,7 +278,8 @@ a > .project-card-header{
   margin: 0;
   background-color: white;
   padding: 20px;
-  height: 200px;
+  padding-top: 0;
+  height: 150px;
 
   h3{
     margin: 0;
@@ -295,6 +304,12 @@ a > .project-card-header{
   .link{
     padding-top: 10px;
     width: 100vw;
+  }
+
+  .project-button-bar{
+    button{
+      padding: 5px 10px;
+    }
   }
 }
 

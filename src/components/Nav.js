@@ -5,7 +5,9 @@ function Nav() {
   const style = {color: "white", textDecoration: 'none'}
   return (
     <nav>
+      <NavLink style={style} exact={true} to="/portfolio">
       <h1 id="header-logo">S</h1>
+      </NavLink>
       <ul className="nav-links">
         <NavLink style={style} exact={true} to="/portfolio">
           <li className="link">About</li>
