@@ -7,7 +7,7 @@ Here are it's functionalities and a to-do list:
 - [x] Install react
 - [x] Add Routing
 - [x] Create about pages
-- [ ] Create resume page
+- [x] Create resume page
 - [x] Create projects page
 - [x] Create component for project card
-- [ ] Create contact component
+- [x] Create contact component

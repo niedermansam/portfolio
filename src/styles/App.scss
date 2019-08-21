@@ -56,6 +56,14 @@ h1, h2 {
   font-family: $header-font;
 }
 
+a{
+  text-decoration: none;
+  color: $main-color;
+  &:hover{
+    font-weight: bold;
+  }
+}
+
 /* 2. Navigation Styles*/
 nav{
   display: flex;
@@ -292,14 +300,75 @@ a > .project-card-header{
   width: 15em;
   margin-left: auto;
   margin-right: auto;
+  align-items: stretch;
 }
 .skill{
+  display: flex;
   padding: 5px;
   margin: 1px;
   width: 45%;
   background-color: $main-color;
   color: white;
+  align-items: center;
+  justify-content: center;
 }
+
+.resume{
+  display: grid;
+  grid-template: "header header" auto
+                 "education skills" auto
+                 "experience experience" auto /  1fr .5fr;
+  margin: 10px 20px;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .education-section, .experience-section{
+    text-align: justify;
+  }
+
+  .resume-header{
+    grid-area: header;
+  }
+  .education-section{
+    grid-area: education;
+  }
+  .experience-section{
+    grid-area: experience;
+  }
+  .skill-list{
+    grid-area: skills;
+    padding: 0 30px;
+    align-self: center;
+  }
+}
+
+/* 3.4 Contact */
+.contact-section{
+  padding-bottom: 50px;
+  padding-top: 20px;
+  background-color: $main-color;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  form{
+  margin: 0 auto;
+  text-align: left;
+  input, textarea{
+    width: 500px;
+    padding: 10px;
+  }
+  input[type="submit"]{
+    position: relative;
+    width: 200px;
+    left: 150px;
+  }
+}
+}
+
+
 
 /* 4 Responsive Styles */
 
@@ -348,5 +417,17 @@ a > .project-card-header{
   }
   .project-card{
     width: 900px;
+  }
+  .resume{
+    grid-template:"header"
+                  "education"
+                   "experience"
+                   "skills";
+    .skill{
+      width: 20%;
+    }
+    .skill-list{
+      width: 100%;
+    }
   }
 }

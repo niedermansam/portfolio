@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from './contact'
 
 const projectArr = [
   {name: "Ski Searcher", description: `An interactive leaflet.js map
@@ -60,7 +61,7 @@ class Projects extends React.Component {
   render(){
 
   let projectComponents = this.createProjectComponentArray(projectArr)
-  
+
   return (
     <div className="text-container project-page">
       <h1>{this.state.title}</h1>
@@ -69,6 +70,7 @@ class Projects extends React.Component {
           projectComponents
         }
       </div>
+      <Contact />
     </div>
   );
 }

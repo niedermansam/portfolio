@@ -3,6 +3,7 @@ import './styles/App.min.css';
 import Nav from './components/Nav';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
+import Contact from './components/contact';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {spring, AnimatedSwitch} from 'react-router-transition';
 
