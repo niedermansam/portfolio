@@ -6,6 +6,7 @@ class Nav extends React.Component {
     super(props);
     this.handleScroll=this.handleScroll.bind(this);
     this.handleHamburgerMenu = this.handleHamburgerMenu.bind(this);
+    this.handleMenuClick = this.handleMenuClick.bind(this);
   }
 
   handleScroll(){
@@ -17,11 +18,17 @@ class Nav extends React.Component {
     }
   }
   handleHamburgerMenu(){
-    let menu = document.getElementById("hamburger-menu");
-    menu.classList.toggle("change");
+    document.getElementById("hamburger-menu").classList.toggle("change");
     document.getElementById('nav-links').classList.toggle('closed');
     document.getElementById('overlay').classList.toggle('hidden');
+  }
 
+  handleMenuClick(){
+    if(window.innerWidth <= 400){
+      document.getElementById("hamburger-menu").classList.toggle("change");
+      document.getElementById('nav-links').classList.toggle('closed');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
   }
 
   componentDidMount(){
@@ -47,7 +54,7 @@ class Nav extends React.Component {
         </div>
       </div>
 
-      <ul className="nav-links closed" id="nav-links">
+      <ul className="nav-links closed" id="nav-links" onClick = {this.handleMenuClick}>
         <NavLink style={style} exact={true} to="/portfolio">
           <li className="link">About</li>
         </NavLink>
