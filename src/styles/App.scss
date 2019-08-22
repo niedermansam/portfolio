@@ -198,6 +198,7 @@ right: 0;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 70px;
 }
 
 .project-card{
@@ -374,39 +375,8 @@ a > .project-card-header{
 
 /* 4.1 Cell Phones */
 
-@media (max-width: 400px) {
-  nav, .nav-links{
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
 
-    #header-logo{
-      margin-bottom: 0;
-    }
-  }
 
-  .link{
-    padding-top: 10px;
-    width: 100vw;
-  }
-
-  .project-button-bar{
-    button{
-      padding: 5px 10px;
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .about-bullet{
-    flex-direction: column;
-    min-width: none;
-    text-align: center;
-  }
-  .link{
-    font-size: 1em;
-  }
-}
 
 @media (max-width: 900px) {
   #greeting{
@@ -428,6 +398,49 @@ a > .project-card-header{
     }
     .skill-list{
       width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .about-bullet{
+    flex-direction: column;
+    min-width: none;
+    text-align: center;
+  }
+  .link{
+    font-size: 1em;
+  }
+  .resume{
+    .education-section, .experience-section{
+      text-align: left;
+    }
+  .skill{
+    width: 40%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  nav, .nav-links{
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    #header-logo{
+      margin-bottom: 0;
+    }
+  }
+
+  .link{
+    padding-top: 10px;
+    width: 100vw;
+  }
+
+  .project-button-bar{
+    button{
+      padding: 5px 10px;
     }
   }
 }

@@ -3,26 +3,39 @@ import React from 'react';
 class Contact extends React.Component {
   constructor(props){
     super(props);
-
-    this.state = {
+    this.baseState = {
       name: "",
       nameMessage: "Jane Doe",
       email: "",
       emailMessage: "Jane@example.com",
       subject: "",
-      message: ""
+      message: "",
+      showForm: true
     }
+    this.state = this.baseState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handleSubject = this.handleSubject.bind(this);
     this.handleMessage = this.handleMessage.bind(this);
+    this.sendAnother=this.sendAnother.bind(this);
   }
 
   handleSubmit(event){
     event.preventDefault();
-    console.log(event.target);
+
+    if(!this.state.name){
+      return;
+    }
+    if(!this.state.email){
+      return;
+    }
+    this.setState({showForm: false})
+  }
+
+  sendAnother(){
+    this.setState(this.baseState);
   }
 
   handleChange(event){
@@ -39,6 +52,18 @@ class Contact extends React.Component {
 
   handleEmail(event){
     this.setState({email: event.target.value});
+    let address = event.target.value;
+    let formInput = document.getElementById('email-form');
+
+
+    if(address.indexOf('@') === -1 || address.indexOf('@') > address.lastIndexOf('.')) {
+      formInput.style.borderColor = 'red';
+      formInput.style.backgroundColor="#F9B7B7";
+    } else {
+      formInput.style.borderColor = "";
+      formInput.style.backgroundColor="";
+    }
+
   }
 
   handleSubject(event){
@@ -49,8 +74,10 @@ class Contact extends React.Component {
     this.setState({message: event.target.value});
   }
 
+
   render(){
-    return <div className="contact-section">
+    if(this.state.showForm){
+    return <div className="contact-section" id="contact-section">
           <h1>Get in Touch</h1>
           <form onSubmit={this.handleSubmit}>
 
@@ -59,7 +86,7 @@ class Contact extends React.Component {
             <p id="name-validation"></p>
 
             <label className="email-label">Email: </label> <br/>
-            <input value={this.state.email} onChange={this.handleEmail} className="email" placeholder={this.state.emailMessage} type="email" name="email"></input><br/>
+            <input id="email-form" value={this.state.email} onChange={this.handleEmail} className="email" placeholder={this.state.emailMessage} type="email" name="email"></input><br/>
             <p className="email-validation"></p>
 
             <label>Subject: </label> <br/>
@@ -74,6 +101,15 @@ class Contact extends React.Component {
 
           </form>
           </div>
+        } else {
+          let formHeight=document.querySelector('#contact-section').clientHeight;
+          return  (
+            <div className="contact-section" style={{ height: formHeight+'px'}}>
+            <h2>Thanks for getting in touch, {this.state.name}!</h2>
+            <button onClick={this.sendAnother} style={{width: "200px", padding: "5px 10px", alignSelf:'center'}}>Send Another Message</button>
+            </div>
+          )
+        }
   }
 }
 
