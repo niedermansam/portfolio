@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1aaceb618108159c15442d58c48d0cb3",
+    "revision": "3d98524e5fd6389c85a0a9945ca21cb1",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "f85fb6fa2ed3bae723f4",
-    "url": "/portfolio/static/css/main.b36569f2.chunk.css"
+    "revision": "60e7e58f1f3607cb40a1",
+    "url": "/portfolio/static/css/main.bca58e08.chunk.css"
   },
   {
-    "revision": "1e9180ab24a798dd406d",
-    "url": "/portfolio/static/js/2.bd3bb1a5.chunk.js"
+    "revision": "e14e066c04d0b5504194",
+    "url": "/portfolio/static/js/2.44150ba9.chunk.js"
   },
   {
-    "revision": "f85fb6fa2ed3bae723f4",
-    "url": "/portfolio/static/js/main.000baf4a.chunk.js"
+    "revision": "60e7e58f1f3607cb40a1",
+    "url": "/portfolio/static/js/main.ccabc99f.chunk.js"
   },
   {
     "revision": "53ebc025fca807d4dbea",
@@ -26,9 +26,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f74737a04c9059d1e279ef4843e9bdfd",
     "url": "/portfolio/static/media/ski-resort-explorer.f74737a0.PNG"
-  },
-  {
-    "revision": "fd76018e472820cbb5f473dc76f2f167",
-    "url": "/portfolio/static/media/trump-twitter-map.fd76018e.PNG"
   }
 ]);
