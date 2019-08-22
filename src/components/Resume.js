@@ -108,7 +108,7 @@ const Experience = (props) => {
                                            optimized it for seach engine indexing. The site,
                                             www.studiomodera.com, was the 3rd unpaid link in
                                             Google's search results for "Missoula Architect" as
-                                            of August 23rd, 2018, but is current inactive.`]
+                                            of August 23rd, 2018, but is currently inactive.`]
                           }
                           ]
 

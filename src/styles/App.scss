@@ -31,7 +31,7 @@ $header-font: 'Farro', sans-serif;
 $color-dark: #051C33;
 $color-yellow: #E2964A;
 $color-green: #60A595;
-$main-color: #2D4671;
+$main-color: rgb(45,70,113);
 $grey: #5D5D5D;
 $secondary-color: #607EB2;
 $secondary-color-light: rgba(96,126,178,.6);
@@ -69,9 +69,15 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
   background: $main-color;
   color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  z-index: 2;
+  transition: height .2s ease-in-out;
+  height: 80px;
 }
 
 .nav-links{
@@ -81,6 +87,43 @@ nav{
   justify-content: space-between;
   align-items: center;
 }
+
+.logo-menu{
+  display: flex;
+  flex-direction: row;
+}
+
+.hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 20px;
+  display: none;
+  z-index: 3;
+}
+
+  .bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(-3px, 6px) rotate(-45deg) ;
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(-3px, -9px) rotate(45deg);
+  }
+
 
 /* 2.1 Link Styles */
 .link{
@@ -181,10 +224,12 @@ right: 0;
   position: relative;
   background-color: white;
   left: 0;
+  top: -80px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 25px;
+  padding-top: 80px;
 }
 
 
@@ -438,15 +483,81 @@ a > .project-card-header{
     flex-direction: column;
     align-items: center;
     padding: 0;
-
+    z-index: 3;
     #header-logo{
-      margin-bottom: 0;
+      margin: 0;
     }
   }
-
+  #header-logo{
+    z-index: -1;
+  }
+  #nav-header{
+    flex-direction: row;
+    z-index: 3;
+  }
+  .hamburger-menu{
+    display: block;
+  }
+  .nav-links.closed {
+    position: absolute !important;
+    top: -200px !important;
+    height: 0;
+    overflow: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    background-color: $main-color;
+    width: 80%;
+    transition: all .6s ease-out;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    z-index: 1;
+  }
   .link{
     padding-top: 10px;
     width: 100vw;
+    &:hover{
+      font-weight: bold;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: .1em;
+      bottom: 0;
+      left: 25%;
+      background-color: white;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+  .active .link {
+    font-weight: bolder;
+    text-decoration: underline;
+    border: none;
+  }
+  .overlay.hidden{
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  }
+
+  .overlay{
+    background-color: black;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    bottom: 0;
+    opacity: .5;
+    z-index: -1;
+    transition: all .5s ease-out;
   }
 
   .project-button-bar{

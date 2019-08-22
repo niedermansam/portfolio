@@ -9,7 +9,8 @@ const projectArr = [
     url: "www.averageanalytics.com/snow-forecast",
     github: 'https://github.com/niedermansam/snow-forecast',
     keywords: [ "Javascript", "HTML/CSS", "leaflet.js", "Web Scraping", "NOAA API"],
-    img: require('./photos/ski-resort-explorer.PNG')
+    img: require('./photos/ski-resort-explorer.PNG'),
+    include: true
   },
   {name: "Census Time Series", description: `A Javascript application
     that uses plotly to visualize American Community Survey data from
@@ -17,15 +18,8 @@ const projectArr = [
     url: 'www.averageanalytics.com/census-search/',
     github: 'https://github.com/niedermansam/census-search',
     keywords: ["Javascript", "HTML/CSS", "Plot.ly", "JQuery", "Census API"],
-    img: require('./photos/census-searcher-tool.PNG')
-  },
-  {name: "Trump Twittermap", description: `An R/Shiny application
-    that visualizes the twitter habits of the 45th President of the
-    United States.`,
-    url: 'http://68.183.17.153:3838/trump-tweets/',
-    github: '',
-    keywords: ["R/Shiny", "Data Visualization", "ggplot"],
-    img: require('./photos/trump-twitter-map.PNG')
+    img: require('./photos/census-searcher-tool.PNG'),
+    include: true
   }
 ]
 
@@ -47,7 +41,9 @@ class Projects extends React.Component {
   }
 
   createProjectComponentArray(arr){
-
+    arr = arr.filter(x=>{
+      return x.include;
+    })
     let projectComponents = [];
 
       for(let i=0; i<arr.length; i++){
