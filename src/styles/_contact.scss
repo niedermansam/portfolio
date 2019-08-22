@@ -1,3 +1,10 @@
+/*
+6. Contact Form "_contact.scss"
+  6.1 Form Layout
+  6.2 Media < 600px
+*/
+
+/* 6.1 Form Layout */
 .contact-section{
   padding-bottom: 100px;
   padding-top: 20px;
@@ -21,4 +28,13 @@
     margin: auto;
   }
 }
+}
+
+/* 6.1 Media < 600px */
+@media (max-width: 600px) {
+  .contact-section{
+    form{
+      width: 80vw;
+    }
+  }
 }

@@ -1,3 +1,11 @@
+/* 
+3. About Me "_about.scss"
+  3.1 About Page styles
+  3.2 Media < 900px
+  3.3 Media < 600px
+*/
+
+/* 3.1 About Page Styles*/
 .about-bullet{
   display: flex;
   flex-direction: column;
@@ -43,4 +51,23 @@
   justify-content: space-around;
   padding: 25px;
   padding-top: 80px;
+}
+
+/* 3.2 Media < 900px */
+@media (max-width: 900px) {
+  #greeting{
+    width: 80%;
+  }
+  #about-me{
+  width: 80%;
+  }
+}
+
+/* 3.2 Media < 600px */
+@media (max-width: 600px) {
+  .about-bullet{
+    flex-direction: column;
+    min-width: none;
+    text-align: center;
+  }
 }

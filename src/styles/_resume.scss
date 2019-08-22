@@ -1,23 +1,13 @@
-.skill-list{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 15em;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: stretch;
-}
-.skill{
-  display: flex;
-  padding: 5px;
-  margin: 1px;
-  width: 45%;
-  background-color: $main-color;
-  color: white;
-  align-items: center;
-  justify-content: center;
-}
+/*
+5. Resume Page
+  5.1 Resume Layout
+  5.2 Skills list
+  5.3 Media < 900px
+  5.4 Media < 600px
+  5.5 Media < 400px
+*/
 
+ /* 5.1 Resume Layout */
 .resume{
   display: grid;
   grid-template: "header header" auto
@@ -45,5 +35,70 @@
     grid-area: skills;
     padding: 0 30px;
     align-self: center;
+  }
+}
+
+ /* 5.2 Skill List */
+.skill-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+.skill{
+  display: flex;
+  padding: 5px;
+  margin: 1px;
+  width: 45%;
+  background-color: $main-color;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5.3 Media < 900px */
+@media (max-width: 900px) {
+  .resume{
+    grid-template:"header"
+                  "education"
+                   "experience"
+                   "skills";
+    .skill{
+      width: 20%;
+    }
+    .skill-list{
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 100px;
+      padding: 0;
+    }
+  }
+}
+
+/* 5.4 Media < 600px */
+@media(max-width: 600px){
+  .resume{
+    .education-section, .experience-section{
+      text-align: left;
+    }
+  .skill{
+    width: 40%;
+    }
+    .skill-list{
+      padding-left: 0;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+/* 5.5 Media < 400px */
+@media (max-width: 400px) {
+  .resume .skill-list{
+    .skill{
+      width: 40%;
+    }
   }
 }
