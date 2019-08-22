@@ -346,7 +346,7 @@ a > .project-card-header{
 
 /* 3.4 Contact */
 .contact-section{
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   padding-top: 20px;
   background-color: $main-color;
   color: white;
@@ -357,14 +357,14 @@ a > .project-card-header{
   form{
   margin: 0 auto;
   text-align: left;
+  width: 500px;
   input, textarea{
-    width: 500px;
     padding: 10px;
+    width: 100%;
   }
   input[type="submit"]{
-    position: relative;
     width: 200px;
-    left: 150px;
+    margin: auto;
   }
 }
 }
@@ -399,6 +399,7 @@ a > .project-card-header{
     .skill-list{
       width: 100%;
       justify-content: center;
+      margin-bottom: 100px;
     }
   }
 }
@@ -419,7 +420,16 @@ a > .project-card-header{
   .skill{
     width: 40%;
     }
+    .skill-list{
+      padding-left: 0;
+      margin-bottom: 100px;
+    }
   }
+  .contact-section{
+    form{
+    width: 80vw;
+  }
+}
 }
 
 @media (max-width: 400px) {

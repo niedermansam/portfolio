@@ -105,7 +105,7 @@ class Contact extends React.Component {
           let formHeight=document.querySelector('#contact-section').clientHeight;
           return  (
             <div className="contact-section" style={{ height: formHeight+'px'}}>
-            <h2>Thanks for getting in touch, {this.state.name}!</h2>
+            <h2>Thanks for getting in touch, {this.state.name.split(" ")[0]}!</h2>
             <button onClick={this.sendAnother} style={{width: "200px", padding: "5px 10px", alignSelf:'center'}}>Send Another Message</button>
             </div>
           )
