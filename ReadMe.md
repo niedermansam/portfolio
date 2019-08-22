@@ -11,4 +11,5 @@ Here are it's functionalities and a to-do list:
 - [x] Create projects page
 - [x] Create component for project card
 - [x] Create contact component
-- [ ] Add hamburger menu for mobile
+- [x] Add hamburger menu for mobile
+- [ ] Allow users to filter skills

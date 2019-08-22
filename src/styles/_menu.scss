@@ -1,0 +1,116 @@
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $main-color;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  z-index: 2;
+  transition: height .2s ease-in-out;
+  height: 80px;
+}
+
+.nav-links{
+  list-style: none;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-menu{
+  display: flex;
+  flex-direction: row;
+}
+
+.hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 20px;
+  display: none;
+  z-index: 4;
+  transition: all .6s ease-out;
+}
+
+  .bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .change.hamburger-menu {
+      transform: translateX(-20vw) translateY(5vh);
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(-3px, 6px) rotate(-45deg) ;
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(-3px, -9px) rotate(45deg);
+  }
+
+
+/* 2.1 Link Styles */
+.link{
+  position: relative;
+  font-size: 1.4em;
+  &:hover{
+    font-weight: bold;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: .1em;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:focus{
+    text-decoration: underline white solid;
+  }
+
+}
+
+
+.active .link {
+  font-weight: bolder;
+  border-bottom: .1em solid  white;
+}
+
+.link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* 2.2 Transition Styles */
+
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+}

@@ -1,0 +1,46 @@
+.about-bullet{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  text-align: center;
+  align-items: center;
+  color: $grey;
+  i{
+    color: $main-color;
+  }
+}
+
+#greeting{
+  h2{
+    font-family: $script;
+    font-size: 5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: $main-color;
+  }
+  color: $grey;
+  width: 40%;
+  align-self: center;
+  min-width: 300px;
+  p{
+    font-size: 1.3em;
+  }
+}
+
+#about-me{
+  width: 40%;
+  min-width: 300px;
+
+}
+
+.about-container{
+  position: relative;
+  background-color: white;
+  left: 0;
+  top: -80px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 25px;
+  padding-top: 80px;
+}

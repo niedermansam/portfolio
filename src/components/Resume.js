@@ -140,22 +140,63 @@ const Skill = (props) => {
 }
 
 // Create conmponent for the list of skills
-const SkillList = (props) => {
-  // Pass in default list if there is no "skills" property
-  let skills = props.skills || ["HTML", "CSS", "Javascript", "React", "Node", "MongoDB", "SQL", "Linux", "WordPress",
-                                "R/Shiny", "Python", "STATA", "Plot.ly", "Leaflet", "Google Earth Engine", "ArcGIS",
-                                "Sketchup", "Adobe Suite", "Microsoft Office", "Latex"]
-  if(skills.length%2 === 1) skills.pop()
-  // pass in default title if title does
-  let title = props.title || "Skills";
+class SkillList extends React.Component {
+  constructor(props){
+    super(props);
+    // Pass in default list if there is no "skills" property
+    this.skills=props.skills || [{topics: ["web"], name: "HTML"},
+                                  {topics: ["web"], name: "CSS"},
+                                  {topics: ["web"], name: "Javascript"},
+                                   {topics: ["web"], name: "React"},
+                                  {topics: ["web"], name: "Node"},
+                                  {topics: ["web", "database"], name: "MongoDB"},
+                                  {topics: ["web", "database"], name: "SQL"},
+                                  {topics: ["misc"], name: "Linux"},
+                                  {topics: ["web"], name: "WordPress"},
+                                  {topics: ["data-analysis", "data-vis"], name: "R/Shiny"},
+                                  {topics: ["data-analysis", "data-vis"], name: "Python"},
+                                  {topics: ["data-analysis", "data-vis"], name: "STATA"},
+                                  {topics: ["web", "data-vis"], name: "Plot.ly"},
+                                  {topics: ["web", "data-vis"], name: "Leaflet"},
+                                  {topics: ["misc", "data-analysis"], name: "Google Earth Engine"},
+                                  {topics: ["misc", "data-vis"], name: "ArcGIS"},
+                                  {topics: ["misc"], name: "Sketchup"},
+                                  {topics: ["misc"], name: "Adobe Suite"},
+                                  {topics: ["misc"], name: "Microsoft Office"},
+                                  {topics: ["misc"], name: "Latex"}]
+    // pass in default title if title does
+    this.title = props.title || "Skills";
+    this.state = {
+      skills: this.skills
+    }
+    this.handleFilter = this.handleFilter.bind(this);
 
+  }
 
+  handleFilter(event){
+    let newState = {}
+    if (event.target.value == "all") newState = {skills: this.skills}
+    else newState.skills = this.skills.filter(x => x.topics.indexOf(event.target.value) != -1)
+
+    this.setState(newState)
+  }
+  //if(skills.length%2 === 1) skills.pop()
+
+render(){
   return (
     <div>
-      <h2>{title}</h2>
-      <div className="skill-list">{skills.map((x, i) => <Skill skill={x} key={i}></Skill>)}</div>
+      <h2>{this.title}</h2>
+      <select onChange={this.handleFilter} className="skills-filter">
+        <option value="all">View All</option>
+        <option value="web">Web Development</option>
+        <option value="data-analysis">Data Analysis</option>
+        <option value="data-vis">Data Visualization</option>
+        <option value="misc">Miscellaneous</option>
+      </select>
+      <div className="skill-list">{this.state.skills.map((x, i) => <Skill skill={x.name} key={x.name}></Skill>)}</div>
     </div>
   )
+}
 }
 
 export default Resume;
