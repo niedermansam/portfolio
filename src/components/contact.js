@@ -78,8 +78,8 @@ class Contact extends React.Component {
   render(){
     if(this.state.showForm){
     return <div className="contact-section" id="contact-section">
-          <h1>Get in Touch</h1>
-          <h2>(Just kidding... this form doesn't do anything yet)</h2>
+          <h1 style={{marginBottom: 0}}>Get in Touch</h1>
+          <h2 style={{marginTop: 0}}>(Just kidding... this form doesn't do anything yet)</h2>
           <form onSubmit={this.handleSubmit}>
 
             <label className="name-label">Name: </label> <br/>
