@@ -12,4 +12,4 @@ Here are it's functionalities and a to-do list:
 - [x] Create component for project card
 - [x] Create contact component
 - [x] Add hamburger menu for mobile
-- [ ] Allow users to filter skills
+- [x] Allow users to filter skills

@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from './contact'
+import Contact from './contact';
 
 class Resume extends React.Component {
 
@@ -184,8 +184,9 @@ class SkillList extends React.Component {
 
 render(){
   return (
-    <div>
+    <div className = "skill-section">
       <h2>{this.title}</h2>
+        <div className = "skill-list-filter">
       <select onChange={this.handleFilter} className="skills-filter">
         <option value="all">View All</option>
         <option value="web">Web Development</option>
@@ -194,6 +195,7 @@ render(){
         <option value="misc">Miscellaneous</option>
       </select>
       <div className="skill-list">{this.state.skills.map((x, i) => <Skill skill={x.name} key={x.name}></Skill>)}</div>
+    </div>
     </div>
   )
 }

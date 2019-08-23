@@ -1,4 +1,5 @@
 import React from 'react';
+import * as emailjs from "emailjs-com";
 
 class Contact extends React.Component {
   constructor(props){
@@ -31,6 +32,24 @@ class Contact extends React.Component {
     if(!this.state.email){
       return;
     }
+
+    let templateParams = {
+    to: 'niederman.sam@gmail.com',
+    subject: `${this.state.subject}`,
+    user_email: this.state.email,
+    html: `
+    <p>${this.state.name} sent a message from the contact form at niedermansam.github.io.</p>
+    <p>${this.state.message}</p>`
+    }
+
+    console.log(templateParams);
+    emailjs.send('default_service', 'contact', templateParams, 'user_mpkVjhsHJHyIwVwqG7AsX')
+      .then(function (response) {
+      console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+      console.log('FAILED...', error);
+      });
+
     this.setState({showForm: false})
   }
 
@@ -39,8 +58,6 @@ class Contact extends React.Component {
   }
 
   handleChange(event){
-    console.log('changed')
-    console.log(event.target.name);
     let newState = {};
     newState[event.target.name] = event.target.value;
     //this.setState(newState);
@@ -79,7 +96,6 @@ class Contact extends React.Component {
     if(this.state.showForm){
     return <div className="contact-section" id="contact-section">
           <h1 style={{marginBottom: 0}}>Get in Touch</h1>
-          <h2 style={{marginTop: 0}}>(Just kidding... this form doesn't do anything yet)</h2>
           <form onSubmit={this.handleSubmit}>
 
             <label className="name-label">Name: </label> <br/>
@@ -94,8 +110,8 @@ class Contact extends React.Component {
             <input type="text" name="subject" value={this.state.subject} onChange={this.handleSubject}></input> <br/>
             <p></p>
 
-            <label className="message-label" value={this.state.message} onChange={this.handleMessage}>Message: </label> <br/>
-            <textarea className="message" name="message" cols="40" rows="5"></textarea> <br/>
+            <label className="message-label" >Message: </label> <br/>
+            <textarea  value={this.state.message} onChange={this.handleMessage} className="message" name="message" cols="40" rows="5"></textarea> <br/>
             <p></p>
 
             <input type="submit"></input>
