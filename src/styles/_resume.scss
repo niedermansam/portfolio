@@ -39,6 +39,11 @@
 }
 
  /* 5.2 Skill List */
+ .skills-filter{
+   width: 240px;
+   position: relative;
+   padding: 5px;
+ }
 .skill-list{
   display: flex;
   flex-flow: row wrap;
@@ -74,6 +79,9 @@
       justify-content: center;
       margin-bottom: 100px;
       padding: 0;
+    }
+    .skills-filter{
+      width: 89%;
     }
   }
 }

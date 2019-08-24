@@ -56,7 +56,8 @@ nav{
     transition: all 0.3s ease-in-out 0s;
   }
   &:focus{
-    text-decoration: underline white solid;
+    -webkit-text-decoration: underline white solid;
+            text-decoration: underline white solid;
   }
 
 }
@@ -108,7 +109,6 @@ nav{
 
 .link:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
