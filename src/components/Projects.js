@@ -9,7 +9,16 @@ const projectArr = [
     that provides information about North American Ski resorts. If the
     user clicks on a point in the map in the United States, the app calls
     the NOAA API to get a forecast for that point.`,
-    url: "www.averageanalytics.com/snow-forecast",
+    buttons: [
+      {
+        name: "Project",
+        url: "http://www.averageanalytics.com/snow-forecast"
+      },
+      {
+        name: "GitHub",
+        url: 'https://github.com/niedermansam/snow-forecast'
+      }
+    ],
     github: 'https://github.com/niedermansam/snow-forecast',
     keywords: [ "Javascript", "HTML/CSS", "leaflet.js", "Web Scraping", "NOAA API"],
     img: require('./photos/ski-resort-explorer.PNG'),
@@ -18,12 +27,49 @@ const projectArr = [
   {name: "Census Time Series", description: `A Javascript application
     that uses plotly to visualize American Community Survey data from
      2010 to present.`,
-    url: 'www.averageanalytics.com/census-search/',
-    github: 'https://github.com/niedermansam/census-search',
+    buttons: [
+      {
+        name: "Project",
+        url: "http://www.averageanalytics.com/census-search/"
+      },
+      {
+        name: "GitHub",
+        url: 'https://github.com/niedermansam/census-search'
+      }
+    ],
     keywords: ["Javascript", "HTML/CSS", "Plot.ly", "JQuery", "Census API"],
     img: require('./photos/census-searcher-tool.PNG'),
     include: true
+  },
+  {name: "FCC Microservices", description: `A node.js application
+    for freecodecamp.org's Microservices and APIs Certification, with
+    a front end build in React.`,
+  buttons: [
+    {
+      name: "Project",
+      url: "https://swamp-straw.glitch.me"
+    },
+    {
+      name: "FCC Certificate",
+      url: 'https://www.freecodecamp.org/certification/samniederman/apis-and-microservices'
+    }
+  ],
+  keywords: [ "MongoDB", "express.js", "React", "node.js"],
+  img: require('./photos/fcc-microservices-project.PNG'),
+  include: true
+},
+{name: "wikiScraper", description: `An R package designed to
+  get information from Wikipedia pages and HTML tables.`,
+buttons: [
+  {
+    name: "GitHub",
+    url: 'https://github.com/niedermansam/wikiScraper'
   }
+],
+keywords: [ "R", "Regular Expressions", "HTML Tables", "GitHub"],
+img: require('./photos/wikiScraper-github-page.PNG'),
+include: true
+}
 ]
 
 class Projects extends React.Component {
@@ -78,7 +124,11 @@ class Projects extends React.Component {
 
 function ProjectCard(props){
 
-  let divStyle = { backgroundImage: `url('${props.img}')` }
+  let divStyle = {
+    backgroundImage: `url('${props.img}')`,
+    backgroundPosition: "left top",
+    backgroundSize: 'cover'
+ }
 
   const onClick = (e) => {
     ReactGA.event({
@@ -118,8 +168,16 @@ function ProjectCard(props){
     </a>
 
     <div className="project-button-bar">
-    <a href={`//${props.url}`} target="_blank" rel="noopener noreferrer"><button>Project</button></a>
-    <a href={`${props.github}`} target="_blank" rel="noopener noreferrer"><button>GitHub</button></a>
+      {props.buttons.map(button => {
+        return(
+          <a href={button.url}
+            key={button.url}
+            target="_blank"
+            rel="noopener noreferrer">
+            <button>{button.name}</button>
+          </a>
+        )
+      })}
     </div>
 
     <div className="project-skills">

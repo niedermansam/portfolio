@@ -182,8 +182,8 @@ class SkillList extends React.Component {
 
   handleFilter(event){
     let newState = {}
-    if (event.target.value == "all") newState = {skills: this.skills}
-    else newState.skills = this.skills.filter(x => x.topics.indexOf(event.target.value) != -1)
+    if (event.target.value === "all") newState = {skills: this.skills}
+    else newState.skills = this.skills.filter(x => x.topics.indexOf(event.target.value) !== -1)
 
 
     ReactGA.event({

@@ -5,7 +5,6 @@ import './styles/App.min.css';
 import Nav from './components/Nav';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
-import Contact from './components/contact';
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-122663887-3');
