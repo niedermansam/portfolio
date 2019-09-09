@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3d9946da.chunk.css",
-    "main.js": "/portfolio/static/js/main.ce8b5ec0.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.ce8b5ec0.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.d572b34f.chunk.css",
+    "main.js": "/portfolio/static/js/main.48081f1c.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.48081f1c.chunk.js.map",
     "runtime~main.js": "/portfolio/static/js/runtime~main.f308c8e6.js",
     "runtime~main.js.map": "/portfolio/static/js/runtime~main.f308c8e6.js.map",
-    "static/js/2.93be66ec.chunk.js": "/portfolio/static/js/2.93be66ec.chunk.js",
-    "static/js/2.93be66ec.chunk.js.map": "/portfolio/static/js/2.93be66ec.chunk.js.map",
+    "static/js/2.a15d4d55.chunk.js": "/portfolio/static/js/2.a15d4d55.chunk.js",
+    "static/js/2.a15d4d55.chunk.js.map": "/portfolio/static/js/2.a15d4d55.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.5558674c9949a67943ec871a6e755400.js": "/portfolio/precache-manifest.5558674c9949a67943ec871a6e755400.js",
+    "precache-manifest.5ec14ae9209d0dedfded9f3f0825e49b.js": "/portfolio/precache-manifest.5ec14ae9209d0dedfded9f3f0825e49b.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.3d9946da.chunk.css.map": "/portfolio/static/css/main.3d9946da.chunk.css.map",
+    "static/css/main.d572b34f.chunk.css.map": "/portfolio/static/css/main.d572b34f.chunk.css.map",
     "static/media/census-searcher-tool.PNG": "/portfolio/static/media/census-searcher-tool.f1de9dac.PNG",
-    "static/media/ski-resort-explorer.PNG": "/portfolio/static/media/ski-resort-explorer.f74737a0.PNG"
+    "static/media/fcc-microservices-project.PNG": "/portfolio/static/media/fcc-microservices-project.96bb0f6a.PNG",
+    "static/media/ski-resort-explorer.PNG": "/portfolio/static/media/ski-resort-explorer.f74737a0.PNG",
+    "static/media/wikiScraper-github-page.PNG": "/portfolio/static/media/wikiScraper-github-page.795bae8d.PNG"
   }
 }
