@@ -1,11 +1,14 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {spring, AnimatedSwitch} from 'react-router-transition';
 import './styles/App.min.css';
 import Nav from './components/Nav';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
 import Contact from './components/contact';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {spring, AnimatedSwitch} from 'react-router-transition';
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-122663887-3');
 
 // hello this is gh-pages branch
 
@@ -22,6 +25,11 @@ function App() {
     };
   }
 
+
+    function fireTracking() {
+        ReactGA.pageview(window.location);
+    }
+
   // wrap the `spring` helper to use a bouncy config
   function bounce(val) {
     return spring(val, {
@@ -29,6 +37,7 @@ function App() {
       damping: 22,
     });
   }
+
 
   // child matches will...
   const bounceTransition = {
@@ -50,7 +59,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router onUpdate={fireTracking}>
     <div className="App">
       <Nav />
     <AnimatedSwitch

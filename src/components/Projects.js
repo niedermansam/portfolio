@@ -1,5 +1,8 @@
 import React from 'react';
-import Contact from './contact'
+import Contact from './contact';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-122663887-3');
 
 const projectArr = [
   {name: "Ski Searcher", description: `An interactive leaflet.js map
@@ -77,11 +80,33 @@ function ProjectCard(props){
 
   let divStyle = { backgroundImage: `url('${props.img}')` }
 
+  const onClick = (e) => {
+    ReactGA.event({
+      category: "Project",
+      action: `Clicked Card`,
+      label: props.name
+    })
+  }
+
+  const onMouseEnter = (e) => {
+    console.log('mouse over')
+    ReactGA.event({
+      category: "Project",
+      action: `Hovered Card`,
+      label: props.name
+    })
+  }
 
   return (
     <div className="project-card" key={props.key}>
-      <a href={"//" + props.url} style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
-    <div className="project-card-header" style={divStyle}>
+      <a href={"//" + props.url}
+        onClick={onClick}
+        style={{textDecoration: 'none'}}
+        target="_blank"
+        rel="noopener noreferrer">
+    <div className="project-card-header"
+      style={divStyle}
+      onMouseEnter={onMouseEnter}>
         <h2 className="project-name">{props.name}</h2>
 
         <div className="project-card-overlay">
@@ -93,8 +118,8 @@ function ProjectCard(props){
     </a>
 
     <div className="project-button-bar">
-    <a href={props.url} target="_blank" rel="noopener noreferrer"><button>Project</button></a>
-    <a href={ props.github} target="_blank" rel="noopener noreferrer"><button>GitHub</button></a>
+    <a href={`//${props.url}`} target="_blank" rel="noopener noreferrer"><button>Project</button></a>
+    <a href={`${props.github}`} target="_blank" rel="noopener noreferrer"><button>GitHub</button></a>
     </div>
 
     <div className="project-skills">

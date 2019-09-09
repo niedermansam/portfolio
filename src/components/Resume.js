@@ -1,5 +1,7 @@
 import React from 'react';
 import Contact from './contact';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-122663887-3');
 
 const EDUCATION_ARRAY = [
                           {
@@ -183,7 +185,15 @@ class SkillList extends React.Component {
     if (event.target.value == "all") newState = {skills: this.skills}
     else newState.skills = this.skills.filter(x => x.topics.indexOf(event.target.value) != -1)
 
+
+    ReactGA.event({
+      category: "Skill List",
+      action: "Filtered List",
+      label: event.target.value
+    })
+
     this.setState(newState)
+
   }
   //if(skills.length%2 === 1) skills.pop()
 
