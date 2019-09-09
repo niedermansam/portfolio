@@ -61,22 +61,20 @@ a > .project-card-header{
   .project-card-overlay {
     position: relative;
     color: white;
-    bottom: -100%;
     background-color: $overlay;
     overflow: hidden;
     height: 100%;
-    transform: translateY(0);
-    transition: all .6s ease-out;
+    transition: all .3s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 0;
     opacity:0;
-  }
 
-  &:hover .project-card-overlay{
-  transform: translateY(-121%);
-  opacity: 1;
+      &:hover {
+      opacity: 1;
+      }
+
   }
 
 
