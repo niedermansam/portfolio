@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c452a2c2707485ab39d21284ec9b7014",
+    "revision": "c46716e5ee16cafb7b97f77f53d94079",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "324b2bbcd4611a5cd8a2",
-    "url": "/portfolio/static/css/main.d572b34f.chunk.css"
+    "revision": "94bbeaa01e563ad2dad1",
+    "url": "/portfolio/static/css/main.5c345146.chunk.css"
   },
   {
     "revision": "035c0c26ed6c40561af5",
     "url": "/portfolio/static/js/2.a15d4d55.chunk.js"
   },
   {
-    "revision": "324b2bbcd4611a5cd8a2",
-    "url": "/portfolio/static/js/main.48081f1c.chunk.js"
+    "revision": "94bbeaa01e563ad2dad1",
+    "url": "/portfolio/static/js/main.d96c76b9.chunk.js"
   },
   {
     "revision": "53ebc025fca807d4dbea",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f1de9dac303baa53d5663cefd23137df",
     "url": "/portfolio/static/media/census-searcher-tool.f1de9dac.PNG"
+  },
+  {
+    "revision": "31de4e40ddca07e6dee2dfe1fa1dfa68",
+    "url": "/portfolio/static/media/color-palette-generator.31de4e40.png"
   },
   {
     "revision": "96bb0f6a67274dae99d137932c9ad53c",
